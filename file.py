@@ -1,14 +1,16 @@
-from selenium import webdriver
-from selenium.webdriver.common.by import By
+import datetime
 
-options_chrome = webdriver.ChromeOptions()
-options_chrome.add_argument('--headless')
+# date in yyyy/mm/dd format
+d1 = datetime.datetime(2018, 5, 3)
+d2 = datetime.datetime(2018, 6, 1)
 
-with webdriver.Chrome(options=options_chrome) as browser:
-    url = "https://parsinger.ru"
-    browser.get(url)
-    a = browser.find_element(By.TAG_NAME, 'a')
-    print(a.get_attribute('href'))
+# Comparing the dates will return
+# either True or False
+print("d1 is greater than d2 : ", d1 > d2)
+print("d1 is less than d2 : ", d1 < d2)
+print("d1 is not equal to d2 : ", d1 != d2)
+
+
 
 
 
